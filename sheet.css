@@ -122,5 +122,14 @@ aside {
 	float: left;
 }
 .connect {
+
 	float: right;
 }
+#header-label-container {
+	float:left;
+}
+
+#header-label {
+	color: white;
+}
+
