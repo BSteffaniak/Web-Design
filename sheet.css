@@ -114,3 +114,11 @@ aside {
 	height: auto;
 	padding: 3%;
 }
+
+.address {
+	float: left;
+}
+
+.connect {
+	float: right;
+}
