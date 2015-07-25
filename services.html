@@ -8,52 +8,89 @@
 	<link type="html/css" rel="stylesheet" href="sheet.css">
 				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	<body>
-		<header>
-		<div id="header-label-container"><h1 id="header-label">TJ Swift House</h1></div>
-				<nav>
-					<a href="s" id="menu-icon"></a>
-					<ul>
-					<li><a href="swifts.html" class="swift">Home</a> </li>
-					<li><a href="services.html" class="current">Services</a></li>
-					<li><a href="The Barn.html" class ="barn">The Barn</a></li>
-					<li><a href="contact.html" class="contact">Contact</a></li>
-					</ul>
-				</nav>
 	<style>
+		.statusRollup {
+			display: none;
+		}
 		.area {
 			padding-top: 110px;
 		}
 		.city {
+			line-height: 1;
 			display: inline-block;
-			padding-right: 30px;
+		}
+		.content {
+			display: table;
+			padding-top: 86px;
+			width: 100%;
+			height: 100%;
+			-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+			-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+			box-sizing: border-box;         /* Opera/IE 8+ */
+		}
+		html, body {
+			height: 100%;
+		}
+		.table-row {
+			display: table-row;
+		}
+		#cities-table {
+			width: 100%;
+		}
+		#cities-table td {
+			text-align: center;
+		}
+		#city-description {
+			width: 100%;
+			height: 100%;
 		}
 	</style>
-		<ul class="area"> 
-			<li class="city"><h1>Alton<h1></li>
-			<li class="city"><h1>Thayer</h1></li>
-			<li class="city"><h1>West Plains</h1></li>
-			<li class="city"><h1>Rolla</h1></li>
-		</ul>
-			<div class="statusRollup">
-				<p>Subitem 1: Nothing to report</p>
-				<p>Subitem 2: Nothing to report</p>
-				<p>Subitem 3: Scheduled maintenance</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<body>
+		<header>
+			<div id="header-label-container"><h1 id="header-label">TJ Swift House</h1></div>
+			<nav>
+				<a href="s" id="menu-icon"></a>
+				<ul>
+					<li><a href="swifts.html" class="swift">Home</a> </li>
+					<li><a href="services.html" class="current">Services</a></li>
+					<li><a href="The Barn.html" class ="barn">The Barn</a></li>
+					<li><a href="contact.html" class="contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="content">
+			<div class="table-row">
+				<table id="cities-table">
+					<tr>
+						<td><h1 class="city">Alton<h1></td>
+						<td><h1 class="city">Thayer</h1></td>
+						<td><h1 class="city">West Plains</h1></td>
+						<td><h1 class="city">Rolla</h1></td>
+					</tr>
+				</table>
 			</div>
+			<div id="city-description" class="table-row">
+				<div class="statusRollup">
+					<p>Subitem 1: Nothing to report</p>
+					<p>Subitem 2: Nothing to report</p>
+					<p>Subitem 3: Scheduled maintenance</p>
+				</div>
+			</div>
+		</div>
 		<script>
 			$.widget("ui.tooltip", $.ui.tooltip, {
-    options: {
-        content: function () {
-            return $(this).prop('title');
-        }
-    }
-});
-
-$(function () {
-    $('.city').attr('title', $('.statusRollup').remove().html())
-    $(document).tooltip();
-});
+			    options: {
+			        content: function () {
+			            return $(this).prop('title');
+			        }
+			    }
+			});
+			
+			$(function () {
+			    $('.city').attr('title', $('.statusRollup').remove().html())
+			    $(document).tooltip();
+			});
 		</script>
 	</body>
 </html>
