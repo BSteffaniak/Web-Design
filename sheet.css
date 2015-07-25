@@ -114,3 +114,11 @@ aside {
 	height: auto;
 	padding: 3%;
 }
+.address {
+	text-align: left;
+	padding: 3%;
+}
+.somo {
+	text-align: right;
+	padding: 3%;
+}
