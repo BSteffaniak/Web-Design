@@ -15,7 +15,7 @@
 		.area {
 			padding-top: 110px;
 		}
-		.city {
+		.city1, .city2, .city3, .city4 {
 			line-height: 1;
 			display: inline-block;
 		}
@@ -63,20 +63,36 @@
 			<div class="table-row">
 				<table id="cities-table">
 					<tr>
-						<td><h1 class="city">Alton<h1></td>
-						<td><h1 class="city">Thayer</h1></td>
-						<td><h1 class="city">West Plains</h1></td>
-						<td><h1 class="city">Rolla</h1></td>
+						<td><h1 class="city1">Alton<h1></td>
+						<td><h1 class="city2">Thayer</h1></td>
+						<td><h1 class="city3">West Plains</h1></td>
+						<td><h1 class="city4">Rolla</h1></td>
 					</tr>
 				</table>
 			</div>
 			<div id="city-description" class="table-row">
-				<div class="statusRollup">
-					<p>Subitem 1: Nothing to report</p>
-					<p>Subitem 2: Nothing to report</p>
-					<p>Subitem 3: Scheduled maintenance</p>
-				</div>
+				<p></p>
 			</div>
+			<div class="city1Rollup">
+					<p>At the Alton office we have</p>
+					<p>blah blah blah</p>
+					<p>blah blah blah</p>
+				</div>
+				<div class="city2Rollup">
+					<p>At the Thayer office we have</p>
+					<p>blah blah blah</p>
+					<p>blah blah blah</p>
+				</div>
+				<div class="city3Rollup">
+					<p>At the West Plains office we have</p>
+					<p>blah blah blah</p>
+					<p>blah blah blah</p>
+				</div>
+				<div class="city4Rollup">
+					<p>At the Rolla office we have</p>
+					<p>blah blah blah</p>
+					<p>blah blah blah</p>
+				</div>
 		</div>
 		<script>
 			$.widget("ui.tooltip", $.ui.tooltip, {
@@ -88,7 +104,10 @@
 			});
 			
 			$(function () {
-			    $('.city').attr('title', $('.statusRollup').remove().html())
+			    $('.city1').attr('title', $('.city1Rollup').remove().html())
+				$('.city2').attr('title', $('.city2Rollup').remove().html())
+				$('.city3').attr('title', $('.city3Rollup').remove().html())
+				$('.city4').attr('title', $('.city4Rollup').remove().html())
 			    $(document).tooltip();
 			});
 		</script>
