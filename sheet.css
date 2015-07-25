@@ -9,7 +9,7 @@ body {
 	color: #555;
 	margin: 0;
 }
-h1 {
+/*h1 {
 	text-align: center;
 	font-size: 180%;
 	line-height: 120%
@@ -26,6 +26,13 @@ h3 {
 }
 p {
 	padding: 1%;
+}*/
+h1, h2, h3 {
+	line-height: 2.5em;
+}
+
+p {
+	line-height: 2.5em;
 }
 img {
 	text-align: center;
@@ -115,21 +122,23 @@ aside {
 	padding: 3%;
 }
 #header-label-container {
-padding-top: 40px;
-padding-left: 20px;
+	padding-top: 53px;
+	padding-left: 20px;
 	float:left;
 }
 
 #header-label {
+	line-height: 1;
+	margin: 0;
 	color: white;
 }
 .address {
 	float: left;
-	padding-top: 140px;
+	padding-top: 100px;
 }
 .connect {
 	float: right;
-	padding-top: 140px;
+	padding-top: 100px;
 }
 .second {
 	text-align: center;
