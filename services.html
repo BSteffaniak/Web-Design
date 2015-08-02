@@ -24,6 +24,7 @@
 		.city1, .city2, .city3, .city4 {
 			line-height: 1;
 			display: inline-block;
+			cursor: pointer;
 		}
 		.content {
 			display: table;
@@ -47,6 +48,10 @@
 			text-align: center;
 		}
 		#city-description {
+			padding-left: 40px;
+			width: 35%;
+		}
+		#city-description-container {
 			width: 100%;
 			height: 100%;
 		}
@@ -76,30 +81,50 @@
 					</tr>
 				</table>
 			</div>
-			<div id="city-description" class="table-row">
-				<p></p>
+			
+			<div id="city-description-container" class="table-row">
+				<div id="city-description">
+					<div id="city1-full-description">
+						<h3>This is Alton's description....</h3>
+						<p>Blah blah blah</p>
+					</div>
+					<div id="city2-full-description">
+						<h3>This is Thayer's description....</h3>
+						<p>Blah blah blah</p>
+					</div>
+					<div id="city3-full-description">
+						<h3>This is West Plains' description....</h3>
+						<p>Blah blah blah</p>
+					</div>
+					<div id="city4-full-description">
+						<h3>This is Rolla's description....</h3>
+						<p>Blah blah blah</p>
+					</div>
+				</div>
 			</div>
+			
 			<div class="city1Rollup">
-					<p><h3>Employment opportunities</h3></p>
-					<p>blah blah blah</p>
-					<p>blah blah blah</p>
-				</div>
-				<div class="city2Rollup">
-					<p><h3>Employment opportunities</h3></p>
-					<p>blah blah blah</p>
-					<p>blah blah blah</p>
-				</div>
-				<div class="city3Rollup">
-					<p><h3>Employment opportunities</h3></p>
-					<p>blah blah blah</p>
-					<p>blah blah blah</p>
-				</div>
-				<div class="city4Rollup">
-					<p><h3>Employment opportunities</h3></p>
-					<p>blah blah blah</p>
-					<p>blah blah blah</p>
-				</div>
-				<div class="provided">
+				<p><h3>Employment opportunities</h3></p>
+				<p>blah blah blah</p>
+				<p>blah blah blah</p>
+			</div>
+			<div class="city2Rollup">
+				<p><h3>Employment opportunities</h3></p>
+				<p>blah blah blah</p>
+				<p>blah blah blah</p>
+			</div>
+			<div class="city3Rollup">
+				<p><h3>Employment opportunities</h3></p>
+				<p>blah blah blah</p>
+				<p>blah blah blah</p>
+			</div>
+			<div class="city4Rollup">
+				<p><h3>Employment opportunities</h3></p>
+				<p>blah blah blah</p>
+				<p>blah blah blah</p>
+			</div>
+			
+			<div class="provided">
 				<ul>
 					<li><h2>Individualized Supported Living (ISL)</h2></li>
 					<li><p>ISL is a form of residential habilitation that allows the people we support the opportunity of community living regardless of his/her competency, severity of disability, or the degree of any physical or behavioral challenges the person may have.</p></li>
@@ -113,7 +138,7 @@
 					<li><h2>Behavioral Intensive Homes</h2></li>
 					<li><a href="http://www.kaylainthecity.com/wp-content/uploads/gym.jpg" /></li>
 				</ul>
-				</div>
+			</div>
 		</div>
 		<script>
 			$.widget("ui.tooltip", $.ui.tooltip, {
@@ -125,11 +150,24 @@
 			});
 			
 			$(function () {
-			    $('.city1').attr('title', $('.city1Rollup').remove().html())
-				$('.city2').attr('title', $('.city2Rollup').remove().html())
-				$('.city3').attr('title', $('.city3Rollup').remove().html())
-				$('.city4').attr('title', $('.city4Rollup').remove().html())
+			    $('.city1').attr('title', $('.city1Rollup').remove().html());
+				$('.city2').attr('title', $('.city2Rollup').remove().html());
+				$('.city3').attr('title', $('.city3Rollup').remove().html());
+				$('.city4').attr('title', $('.city4Rollup').remove().html());
 			    $(document).tooltip();
+			    
+			    var fullDescriptions = [];
+			    var numCities = 4;
+			    
+		    	for (var i = 1; i <= numCities; i++) {
+		    		fullDescriptions.push($("#city" + i + "-full-description").remove().html());
+				    
+				    $(".city" + i).click(function () {
+				    	var id = parseFloat(this.className.substring(4, 5));
+				    	
+				    	$("#city-description").html(fullDescriptions[id - 1]);
+				    });
+		    	}
 			});
 		</script>
 		<footer>
