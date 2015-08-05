@@ -176,13 +176,23 @@
 			    var fullDescriptions = [];
 			    var numCities = 4;
 			    
+			    var current = 0;
+			    
 		    	for (var i = 1; i <= numCities; i++) {
 		    		fullDescriptions.push($("#city" + i + "-full-description").remove().html());
 				    
-				    $(".city" + i).click(function () {
+				    $(".city" + i).click(function() {
 				    	var id = parseFloat(this.className.substring(4, 5));
 				    	
-				    	$("#city-description").html(fullDescriptions[id - 1]);
+				    	if (current == id) {
+				    		$("#city-description").html("");
+				    		
+				    		current = 0;
+				    	} else {
+				    		$("#city-description").html(fullDescriptions[id - 1]);
+				    		
+				    		current = id;
+				    	}
 				    });
 		    	}
 			});
