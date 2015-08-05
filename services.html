@@ -27,6 +27,7 @@
 		.city1, .city2, .city3, .city4 {
 			line-height: 1;
 			display: inline-block;
+			cursor: pointer;
 		}
 		.content {
 			display: table;
@@ -50,6 +51,10 @@
 			text-align: center;
 		}
 		#city-description {
+			padding-left: 40px;
+			width: 35%;
+		}
+		#city-description-container {
 			width: 100%;
 			height: 100%;
 		}
@@ -79,30 +84,50 @@
 					</tr>
 				</table>
 			</div>
-			<div id="city-description" class="table-row">
-				<p></p>
+			
+			<div id="city-description-container" class="table-row">
+				<div id="city-description">
+					<div id="city1-full-description">
+						<h3>This is Alton's description....</h3>
+						<p>Blah blah blah</p>
+					</div>
+					<div id="city2-full-description">
+						<h3>This is Thayer's description....</h3>
+						<p>Blah blah blah</p>
+					</div>
+					<div id="city3-full-description">
+						<h3>This is West Plains' description....</h3>
+						<p>Blah blah blah</p>
+					</div>
+					<div id="city4-full-description">
+						<h3>This is Rolla's description....</h3>
+						<p>Blah blah blah</p>
+					</div>
+				</div>
 			</div>
+			
 			<div class="city1Rollup">
-					<p><h3>Employment opportunities</h3></p>
-					<p>blah blah blah</p>
-					<p>blah blah blah</p>
-				</div>
-				<div class="city2Rollup">
-					<p><h3>Employment opportunities</h3></p>
-					<p>blah blah blah</p>
-					<p>blah blah blah</p>
-				</div>
-				<div class="city3Rollup">
-					<p><h3>Employment opportunities</h3></p>
-					<p>blah blah blah</p>
-					<p>blah blah blah</p>
-				</div>
-				<div class="city4Rollup">
-					<p><h3>Employment opportunities</h3></p>
-					<p>blah blah blah</p>
-					<p>blah blah blah</p>
-				</div>
-				<div class="provided">
+				<p><h3>Employment opportunities</h3></p>
+				<p>blah blah blah</p>
+				<p>blah blah blah</p>
+			</div>
+			<div class="city2Rollup">
+				<p><h3>Employment opportunities</h3></p>
+				<p>blah blah blah</p>
+				<p>blah blah blah</p>
+			</div>
+			<div class="city3Rollup">
+				<p><h3>Employment opportunities</h3></p>
+				<p>blah blah blah</p>
+				<p>blah blah blah</p>
+			</div>
+			<div class="city4Rollup">
+				<p><h3>Employment opportunities</h3></p>
+				<p>blah blah blah</p>
+				<p>blah blah blah</p>
+			</div>
+			
+			<div class="provided">
 				<ul>
 					<li><h2>Individualized Supported Living (ISL)</h2></li>
 					<li><p>ISL is a form of residential habilitation that allows the people we support the opportunity of community living regardless of his/her competency, severity of disability, or the degree of any physical or behavioral challenges the person may have.</p></li>
@@ -115,8 +140,12 @@
 					<li><p>The goal of supported employment services are: to teach and train lifelong job skills to people with disabilities, find and maintain employment for consumers receiving the services the service.Consumers who are enrolled in the program will be alloted a set number of hours each month to work with TJ Swift House employees in an environment conducive to vocational training. Supported employment services utilize a three prong approach in the following areas: Job skills training, job development, and job assistance. Job skills training will focus on teaching the consumer basic requirements and the social skills necessary for employment. Job development will focus on assisting the consumer in obtaining employment. Lastly, job assistance will focus on TJ Swift House employees providing oversight and side by side assistance to consumers at the job site once employment has been obtained. Job skills training and job development services are a time limited service. However, job assistance services can last a lifetime if the team feels it is a necessary service for the consumer being served.</p></li> 
 					<li><h2>Shared Living</h2></li>
 					<li><h2>Behavioral Intensive Homes</h2></li>
+
 					<li><p>Behavior intensive homes are shift homes that are focused on supporting consumers who require a greater level of care due to increased behavioral needs. These homes are identified as such by the Department of Mental Health (DMH). Behavior intensive homes have an elevated day rate due to the intense supports required. By design, the homes are not meant to be long term placements. The goal for these homes is to teach qualifying consumers better coping skills so they may eventually transfer to a traditional ISL once he/she no longer requires this level of oversight. Staff must apply specifically to work in behavior intensive homes. Additional and more intensive training is required and a higher pay scale is paid to employees working in behavioral intensive homes.</p></li>
 				</div>
+					<li><a href="http://www.kaylainthecity.com/wp-content/uploads/gym.jpg" /></li>
+				</ul>
+			</div>
 		</div>
 		<script>
 			$.widget("ui.tooltip", $.ui.tooltip, {
@@ -128,11 +157,24 @@
 			});
 			
 			$(function () {
-			    $('.city1').attr('title', $('.city1Rollup').remove().html())
-				$('.city2').attr('title', $('.city2Rollup').remove().html())
-				$('.city3').attr('title', $('.city3Rollup').remove().html())
-				$('.city4').attr('title', $('.city4Rollup').remove().html())
+			    $('.city1').attr('title', $('.city1Rollup').remove().html());
+				$('.city2').attr('title', $('.city2Rollup').remove().html());
+				$('.city3').attr('title', $('.city3Rollup').remove().html());
+				$('.city4').attr('title', $('.city4Rollup').remove().html());
 			    $(document).tooltip();
+			    
+			    var fullDescriptions = [];
+			    var numCities = 4;
+			    
+		    	for (var i = 1; i <= numCities; i++) {
+		    		fullDescriptions.push($("#city" + i + "-full-description").remove().html());
+				    
+				    $(".city" + i).click(function () {
+				    	var id = parseFloat(this.className.substring(4, 5));
+				    	
+				    	$("#city-description").html(fullDescriptions[id - 1]);
+				    });
+		    	}
 			});
 		</script>
 		<footer>
