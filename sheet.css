@@ -66,6 +66,8 @@ nav ul ul {
 	visibility: hidden;
 	position: absolute;
 	display: block;
+	width: 150px;
+
 	padding-left: 0;
 	
 	background-color: #405580;
