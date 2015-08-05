@@ -15,8 +15,11 @@
 			width: 60%;
 			height: auto;
 		}
-		.photo {
-			float: right;
+		.photo > img {
+			display: block;
+			margin: 0 auto;
+			
+			padding-top: 70px;
 		}
 		.statusRollup {
 			display: none;
@@ -149,9 +152,9 @@
 					<li><a href="http://www.kaylainthecity.com/wp-content/uploads/gym.jpg" /></li>
 				</ul>
 			</div>
-		</div>
-		<div class="photo">
-			<img src="http://www.kaylainthecity.com/wp-content/uploads/gym.jpg" />
+			<div class="photo">
+				<img src="http://www.kaylainthecity.com/wp-content/uploads/gym.jpg" />
+			</div>
 		</div>
 		<script>
 			$.widget("ui.tooltip", $.ui.tooltip, {
