@@ -66,8 +66,13 @@ nav ul ul {
 	visibility: hidden;
 	position: absolute;
 	display: block;
-	padding-top: 30px;
 	width: 150px;
+
+	padding-left: 0;
+	
+	background-color: #405580;
+	/*opacity: .9;
+	/*padding-top: 30px;*/
 }
 nav ul:hover ul {
 	visibility: visible;
