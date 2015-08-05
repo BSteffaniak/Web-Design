@@ -67,6 +67,7 @@ nav ul ul {
 	position: absolute;
 	display: block;
 	padding-top: 30px;
+	width: 150px;
 }
 nav ul:hover ul {
 	visibility: visible;
