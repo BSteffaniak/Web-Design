@@ -72,7 +72,7 @@ nav ul ul {
 	/*opacity: .9;
 	/*padding-top: 30px;*/
 }
-nav ul:hover ul {
+nav ul li:hover ul {
 	visibility: visible;
 }
 .current {
