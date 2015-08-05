@@ -57,9 +57,19 @@ ul {
 	list-style: none;
 }
 nav ul li {
+	position: relative;
 	display: inline-block;
 	float: left;
 	padding: 10px;
+}
+nav ul ul {
+	visibility: hidden;
+	position: absolute;
+	display: block;
+	padding-top: 30px;
+}
+nav ul:hover ul {
+	visibility: visible;
 }
 .current {
 	color: #FFF;
